@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore three iconic global tourist destinations: Kyoto (Japan), Santorini (Greece), and Banff National Park (Canada) with in-depth travel guides, transit tips, and itineraries.">
+  <meta name="author" content="Tanmay Nilesh Shinde">
+  <meta name="theme-color" content="#2563eb">
+  <title>Wanderlust Chronicles | Global Travel Blog</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation Bar -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="#home" class="logo" aria-label="Wanderlust Travel Blog">
+        <div class="logo-icon">
+          <i class="fas fa-compass"></i>
+        </div>
+        <div>Wanderlust <span>Chronicles</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#calculator">Budget Calculator</a></li>
+          <li><a href="#travel-tips">Travel Tips</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Wishlist / Saved counter -->
+        <button class="bookmark-btn-nav" id="bookmarkBtnNav" title="Saved Destinations" aria-label="View saved destinations count">
+          <i class="fas fa-bookmark"></i>
+          <span class="badge-count" id="bookmarkCount">0</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme" aria-label="Switch between light and dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileMenuBtn" title="Toggle Navigation Menu" aria-label="Open navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-pill">
+        <i class="fas fa-globe-americas"></i> Curated Worldwide Travel Guides
+      </div>
+      <h1 class="hero-title">Wander Where The Soul Feels Alive</h1>
+      <p class="hero-subtitle">
+        Embark on memorable journeys across the globe. Discover hand-picked destinations featuring comprehensive travel intelligence, cultural context, transit advice, and budget guidelines.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="hero-search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search by destination name, country, or category..." aria-label="Search destinations">
+        <button class="hero-search-btn" id="searchBtn">Find Adventures</button>
+      </div>
+
+      <!-- Quick Stats Strip -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Iconic Destinations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Verified Advice</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3-Day</span>
+          <span class="stat-label">Custom Itineraries</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Free Travel Intel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Destinations Section -->
+  <main class="section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explore The Globe</span>
+        <h2 class="section-title">Featured Tourist Destinations</h2>
+        <p class="section-subtitle">
+          Immerse yourself in three of the planet’s most celebrated travel wonders—each offering unique cultural heritage, coastal panoramas, and alpine majesty.
+        </p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">
+          <i class="fas fa-th-large"></i> All Destinations (3)
+        </button>
+        <button class="filter-btn" data-category="cultural">
+          <i class="fas fa-torii-gate"></i> Cultural Heritage
+        </button>
+        <button class="filter-btn" data-category="coastal">
+          <i class="fas fa-water"></i> Coastal &amp; Islands
+        </button>
+        <button class="filter-btn" data-category="mountain">
+          <i class="fas fa-mountain"></i> Mountains &amp; Nature
+        </button>
+      </div>
+
+      <!-- Destinations Grid -->
+      <div class="destinations-grid" id="destinationsGrid">
+        
+        <!-- Destination 1: Kyoto, Japan -->
+        <article class="destination-card" data-category="cultural" data-name="Kyoto Japan Asia Ancient Temples">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80" alt="Scenic historic pagoda in Kyoto surrounded by Japanese cherry and maple trees" loading="lazy">
+            <div class="card-badges">
+              <span class="badge-category">Cultural Heritage</span>
+            </div>
+            <button class="card-save-btn" data-id="kyoto" title="Save destination" aria-label="Bookmark Kyoto">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fas fa-map-marker-alt"></i> Kansai Region, Japan
+            </div>
+            <h3 class="card-title">Kyoto</h3>
+            <p class="card-description">
+              As Japan's cultural heartbeat for over a thousand years, Kyoto enchants travelers with over 1,600 historic Buddhist temples, serene zen rock gardens, preserved geisha districts, and magical bamboo forests.
+            </p>
+
+            <!-- Travel Information Grid -->
+            <div class="travel-intel-grid">
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Best Time to Visit</span>
+                  <span class="intel-value">March–May &amp; Oct–Nov</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-train"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Transit &amp; Access</span>
+                  <span class="intel-value">Shinkansen (2h 15m from Tokyo)</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-utensils"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Must-Try Food</span>
+                  <span class="intel-value">Kaiseki, Uji Matcha &amp; Ramen</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-coins"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Currency &amp; Lang</span>
+                  <span class="intel-value">JPY (¥) &bull; Japanese</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights Checklist -->
+            <div class="highlights-box">
+              <div class="highlights-title">Key Attractions</div>
+              <ul class="highlights-list">
+                <li><i class="fas fa-check-circle"></i> Fushimi Inari-Taisha (10,000 Torii Gates)</li>
+                <li><i class="fas fa-check-circle"></i> Arashiyama Bamboo Grove &amp; Tenryu-ji</li>
+                <li><i class="fas fa-check-circle"></i> Kinkaku-ji (The Golden Pavilion)</li>
+                <li><i class="fas fa-check-circle"></i> Historic Gion &amp; Nishiki Food Market</li>
+              </ul>
+            </div>
+
+            <div class="card-actions">
+              <div class="budget-estimate">
+                Est. Daily: <strong>$85 – $145 USD</strong>
+              </div>
+              <button class="btn-details" data-dest="kyoto">
+                View Itinerary <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Destination 2: Santorini, Greece -->
+        <article class="destination-card" data-category="coastal" data-name="Santorini Greece Europe Aegean Caldera Islands">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=80" alt="Iconic blue-domed church and whitewashed houses perched over the Aegean Sea in Santorini" loading="lazy">
+            <div class="card-badges">
+              <span class="badge-category">Coastal &amp; Islands</span>
+            </div>
+            <button class="card-save-btn" data-id="santorini" title="Save destination" aria-label="Bookmark Santorini">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fas fa-map-marker-alt"></i> Cyclades, Greece
+            </div>
+            <h3 class="card-title">Santorini</h3>
+            <p class="card-description">
+              Perched atop towering volcanic cliffs overlooking the cobalt Aegean Sea, Santorini is globally renowned for its whitewashed villages, bright blue domes, dramatic caldera trails, and world-class crimson sunsets.
+            </p>
+
+            <!-- Travel Information Grid -->
+            <div class="travel-intel-grid">
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Best Time to Visit</span>
+                  <span class="intel-value">May–June &amp; Sept–Oct</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-ship"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Transit &amp; Access</span>
+                  <span class="intel-value">Ferry / 45m flight from Athens</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-utensils"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Must-Try Food</span>
+                  <span class="intel-value">Santorini Fava &amp; Tomatokeftedes</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-coins"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Currency &amp; Lang</span>
+                  <span class="intel-value">EUR (€) &bull; Greek / English</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights Checklist -->
+            <div class="highlights-box">
+              <div class="highlights-title">Key Attractions</div>
+              <ul class="highlights-list">
+                <li><i class="fas fa-check-circle"></i> Oia Sunset Castle &amp; Blue Domes</li>
+                <li><i class="fas fa-check-circle"></i> Fira to Oia 10km Caldera Cliff Hike</li>
+                <li><i class="fas fa-check-circle"></i> Red Beach &amp; Perissa Volcanic Sands</li>
+                <li><i class="fas fa-check-circle"></i> Ancient Akrotiri Minoan Bronze Ruins</li>
+              </ul>
+            </div>
+
+            <div class="card-actions">
+              <div class="budget-estimate">
+                Est. Daily: <strong>$110 – $190 USD</strong>
+              </div>
+              <button class="btn-details" data-dest="santorini">
+                View Itinerary <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Destination 3: Banff National Park, Canada -->
+        <article class="destination-card" data-category="mountain" data-name="Banff National Park Canada North America Rocky Mountains Lake Louise">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80" alt="Vibrant turquoise glacial water of Lake Louise framed by majestic Canadian Rocky peaks" loading="lazy">
+            <div class="card-badges">
+              <span class="badge-category">Mountains &amp; Nature</span>
+            </div>
+            <button class="card-save-btn" data-id="banff" title="Save destination" aria-label="Bookmark Banff">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fas fa-map-marker-alt"></i> Alberta, Canada
+            </div>
+            <h3 class="card-title">Banff National Park</h3>
+            <p class="card-description">
+              Nestled inside the majestic Canadian Rocky Mountains, Banff is a pristine alpine paradise featuring turquoise glacial waters, jagged limestone summits, dense pine forests, and rich wildlife including elk and grizzly bears.
+            </p>
+
+            <!-- Travel Information Grid -->
+            <div class="travel-intel-grid">
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Best Time to Visit</span>
+                  <span class="intel-value">June–Aug (Hikes) &bull; Dec–Mar (Snow)</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-car"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Transit &amp; Access</span>
+                  <span class="intel-value">90m drive from Calgary Airport</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-utensils"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Must-Try Food</span>
+                  <span class="intel-value">Alberta Bison, Poutine &amp; Salmon</span>
+                </div>
+              </div>
+
+              <div class="intel-item">
+                <div class="intel-icon"><i class="fas fa-coins"></i></div>
+                <div class="intel-details">
+                  <span class="intel-label">Currency &amp; Lang</span>
+                  <span class="intel-value">CAD (C$) &bull; English / French</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights Checklist -->
+            <div class="highlights-box">
+              <div class="highlights-title">Key Attractions</div>
+              <ul class="highlights-list">
+                <li><i class="fas fa-check-circle"></i> Lake Louise &amp; Moraine Lake Canoeing</li>
+                <li><i class="fas fa-check-circle"></i> Icefields Parkway Scenic Mountain Drive</li>
+                <li><i class="fas fa-check-circle"></i> Banff Sulphur Mountain Gondola Views</li>
+                <li><i class="fas fa-check-circle"></i> Natural Mineral Upper Hot Springs</li>
+              </ul>
+            </div>
+
+            <div class="card-actions">
+              <div class="budget-estimate">
+                Est. Daily: <strong>$95 – $175 USD</strong>
+              </div>
+              <button class="btn-details" data-dest="banff">
+                View Itinerary <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No Results Message (For Search) -->
+      <div id="noResultsMsg" style="display: none; text-align: center; padding: 40px; color: var(--text-muted);">
+        <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 12px; opacity: 0.5;"></i>
+        <h3>No matching destinations found</h3>
+        <p>Try searching for Kyoto, Santorini, or Banff.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Travel Budget Calculator Section -->
+  <section class="section section-alt" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Trip Planning</span>
+        <h2 class="section-title">Travel Budget Estimator</h2>
+        <p class="section-subtitle">
+          Plan your travel finances with precision. Select your destination, duration, and style to receive an instant estimated budget breakdown.
+        </p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-grid">
+          <div class="calc-group">
+            <label for="calcDestination"><i class="fas fa-map-pin"></i> Select Destination</label>
+            <select id="calcDestination">
+              <option value="kyoto">Kyoto, Japan</option>
+              <option value="santorini">Santorini, Greece</option>
+              <option value="banff">Banff National Park, Canada</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <label for="calcDays"><i class="fas fa-calendar-day"></i> Trip Length (Days)</label>
+            <input type="number" id="calcDays" value="5" min="1" max="60">
+          </div>
+
+          <div class="calc-group">
+            <label for="calcStyle"><i class="fas fa-wallet"></i> Travel Style</label>
+            <select id="calcStyle">
+              <option value="backpacker">Backpacker / Budget (~$65-$80/day)</option>
+              <option value="moderate" selected>Comfort / Moderate (~$120-$155/day)</option>
+              <option value="luxury">Luxury / Upscale (~$290-$380/day)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-result-box">
+          <div class="calc-result-title">Estimated Total Trip Expenditure</div>
+          <div class="calc-result-amount" id="calcTotal">$600 USD</div>
+          <div class="calc-result-breakdown" id="calcBreakdown">
+            Includes approx. $270 lodging, $180 food & dining, and $150 local transit & entrance fees.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Tips & Essentials Section -->
+  <section class="section" id="travel-tips">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Essential Travel Wisdom</span>
+        <h2 class="section-title">Smart Traveler Toolkit</h2>
+        <p class="section-subtitle">
+          Key guidelines and practical checklists to ensure smooth journeys wherever your wanderlust leads.
+        </p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fas fa-suitcase-rolling"></i></div>
+          <h3 class="tip-title">Smart Packing Strategy</h3>
+          <p class="tip-text">
+            Embrace lightweight merino wool layers, comfortable broken-in walking shoes, a universal power adapter with GaN USB-C, and carry a compact waterproof daypack.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fas fa-credit-card"></i></div>
+          <h3 class="tip-title">Money &amp; Foreign FX</h3>
+          <p class="tip-text">
+            Use zero-fee international debit cards (like Wise or Revolut). Always select local currency billing at payment terminals to prevent costly dynamic currency conversion markups.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3 class="tip-title">Insurance &amp; Health</h3>
+          <p class="tip-text">
+            Never travel abroad without comprehensive medical and trip cancellation insurance. Keep digital offline copies of your passport, visa papers, and emergency contact numbers.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon"><i class="fas fa-leaf"></i></div>
+          <h3 class="tip-title">Responsible Tourism</h3>
+          <p class="tip-text">
+            Respect local spiritual norms and dress codes at sacred shrines. Follow Leave No Trace principles in national parks, support locally-owned eateries, and minimize single-use plastics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter / Inquiry Section -->
+  <section class="section" id="newsletter">
+    <div class="container">
+      <div class="newsletter-wrapper">
+        <h2 class="newsletter-title">Subscribe to the Wanderlust Dispatch</h2>
+        <p class="newsletter-desc">
+          Join 25,000+ enthusiastic explorers receiving our weekly destination spotlights, flight deals, hidden gem guides, and season alerts directly in their inbox.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required aria-label="Email address for travel newsletter">
+          <button type="submit">Join Newsletter</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <div class="logo-icon"><i class="fas fa-compass"></i></div>
+            <div>Wanderlust <span>Chronicles</span></div>
+          </div>
+          <p>
+            An inspiring travel blog showcasing tourist destinations around the globe with authentic photography, cultural context, and actionable travel information.
+          </p>
+          <div class="footer-socials">
+            <a href="https://github.com/TanmayNileshShinde" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub" aria-label="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Twitter" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="#destinations">Kyoto, Japan</a></li>
+            <li><a href="#destinations">Santorini, Greece</a></li>
+            <li><a href="#destinations">Banff, Canada</a></li>
+            <li><a href="#destinations">Upcoming Guides</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#calculator">Budget Estimator</a></li>
+            <li><a href="#travel-tips">Packing Checklists</a></li>
+            <li><a href="#travel-tips">Transit Guidelines</a></li>
+            <li><a href="#travel-tips">Responsible Travel</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Academic Info</h4>
+          <ul>
+            <li><strong>Subject:</strong> Web Technology-2 (WT-2)</li>
+            <li><strong>Assignment:</strong> Practice Question 1</li>
+            <li><strong>Developer:</strong> Tanmay Nilesh Shinde</li>
+            <li><strong>Institution:</strong> SAKEC</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Wanderlust Chronicles. Developed by Tanmay Nilesh Shinde.</div>
+        <div>Deployed with ❤️ on GitHub Pages.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detailed Itinerary Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal window">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body">
+        <img src="" alt="" id="modalImage" class="modal-image">
+        <h3 class="modal-title" id="modalTitle">Destination Title</h3>
+        <div class="modal-subtitle" id="modalSubtitle">Destination Subtitle</div>
+        <p class="card-description" id="modalDesc">Destination detailed overview text will be displayed here.</p>
+        
+        <div style="margin: 16px 0; padding: 14px; background: var(--bg-subtle); border-radius: var(--radius-sm); font-size: 0.9rem;" id="modalSeason"></div>
+        <div style="margin: 16px 0; padding: 14px; background: var(--bg-subtle); border-radius: var(--radius-sm); font-size: 0.9rem;" id="modalTransit"></div>
+
+        <h4 style="margin-top: 24px; font-size: 1.15rem; font-weight: 700;">Curated 3-Day Travel Itinerary</h4>
+        <div class="modal-timeline" id="modalTimeline">
+          <!-- Timelines dynamically injected by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Action completed successfully!</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
