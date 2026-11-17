@@ -140,22 +140,76 @@ if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', toggleTheme);
 }
 
-// --- MOBILE NAVIGATION ---
+// --- NAVIGATION & SCROLLSPY ---
+const trackedSections = document.querySelectorAll('section[id], main[id]');
+
+function setActiveNavLink(targetId) {
+  if (!navLinks) return;
+  navLinks.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === `#${targetId}`) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+function handleScrollSpy() {
+  const scrollPosition = window.scrollY + 120;
+
+  // If user reached the very bottom of the page, activate the last nav link (newsletter)
+  if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
+    setActiveNavLink('newsletter');
+    return;
+  }
+
+  let currentId = 'home';
+  trackedSections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    if (scrollPosition >= top && scrollPosition < top + height) {
+      currentId = section.getAttribute('id');
+    }
+  });
+
+  setActiveNavLink(currentId);
+}
+
 if (mobileMenuBtn && navLinks) {
   mobileMenuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     const isOpen = navLinks.classList.contains('open');
     mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
   });
+}
 
-  // Close menu on link click
+if (navLinks) {
   navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        setActiveNavLink(targetId);
+      }
+      if (navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        if (mobileMenuBtn) {
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      }
     });
   });
 }
+
+const siteLogo = document.querySelector('.logo');
+if (siteLogo) {
+  siteLogo.addEventListener('click', () => {
+    setActiveNavLink('home');
+  });
+}
+
+window.addEventListener('scroll', handleScrollSpy, { passive: true });
 
 // --- BOOKMARK / SAVED GUIDES ---
 let savedBookmarks = JSON.parse(localStorage.getItem('travel_blog_bookmarks') || '[]');
@@ -364,4 +418,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   updateBookmarkCount();
   calculateBudget();
+  handleScrollSpy();
 });
